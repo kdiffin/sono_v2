@@ -4,6 +4,7 @@ import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Layout from "./routes/Layout";
 import Home from "./routes/home";
+import EventPage from "./routes/event-page";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -11,6 +12,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/event/:id" element={<EventPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

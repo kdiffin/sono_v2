@@ -4,14 +4,18 @@ import viteLogo from "/vite.svg";
 import { Button } from "@/components/ui/button";
 import { Outlet } from "react-router";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/footer";
 
 function Layout() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar></Navbar>
-      <Outlet />
+      <div className="flex-1">
+        <Outlet />
+      </div>
+      <Footer />
     </div>
   );
 }

@@ -6,6 +6,8 @@ import { useParams } from "react-router";
 import { Sparkles } from "lucide-react";
 import { EVENTS } from "@/data";
 import EventCard, { EventCardContainer } from "@/components/event-card";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import Certificate from "@/components/pdf-certificate";
 
 function Profile() {
   const [userData, setUserData] = useState<any>(null); // Use 'any' or define a User type
@@ -89,6 +91,37 @@ function Profile() {
                       author={event.author}
                       disabled={event.disabled}
                     />
+                  ))}
+                </EventCardContainer>
+              ) : (
+                <p>No participated events found.</p>
+              )}
+            </div>
+
+            <div className="pt-6">
+              <h2 className="text-3xl  font-semibold">
+                <span className="font-semibold">Certificate Downloads📁</span>
+              </h2>
+              <p className="mt-2">
+                Here are the events{" "}
+                <span className="text-primary underline underline-offset-4">
+                  {userData.displayName}
+                </span>{" "}
+                has participated in:
+              </p>{" "}
+              {participatedEvents.length > 0 ? (
+                <EventCardContainer>
+                  {participatedEvents.map((event) => (
+                    <div className="bg-muted w-full p-3 rounded-lg">
+
+   <PDFDownloadLink document={<Certificate auraPoints={event.aura.toString()} author={event.author} eventName={event.title} participantName={userData.displayName} />} fileName={event.title + ".pdf"}>
+   {/* @ts-ignore not an issue */}
+   {({ loading }) =>
+     loading ? 'Generating PDF...' : ('Download PDF' + " for " + event.title)
+   }
+ </PDFDownloadLink>
+
+                    </div>
                   ))}
                 </EventCardContainer>
               ) : (

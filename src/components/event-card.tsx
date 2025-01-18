@@ -20,7 +20,7 @@ import {
   User2Icon,
 } from "lucide-react";
 import { Badge } from "./ui/badge";
-import ImageCustom from "./Image";
+import ImageCustom from "./image-custom";
 import { Link } from "react-router";
 
 function EventCard({
@@ -114,6 +114,7 @@ function EventCard({
           </div>
         </div>
       </CardContent>
+
       <CardFooter className="pt-0">
         <Link to={"/event/" + id}>
           <Button variant={"fancy"} size={"sm"}>
@@ -131,7 +132,7 @@ export function EventCardContainer({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid mt-5 gap-4 sm:grid-cols-2 p-1 xl:grid-cols-3 2xl:grid-cols-4">
+    <div className="grid mt-5 gap-4  md:grid-cols-2 p-1  2xl:grid-cols-3">
       {children}
     </div>
   );

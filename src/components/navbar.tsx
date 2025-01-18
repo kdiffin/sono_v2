@@ -16,51 +16,39 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Login from "@/components/auth";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between  p-4 px-6 bg-background border-b border-border">
-      <div className="text-2xl flex items-center gap-2  font-bold text-foreground">
-        <DropdownMenu>
-          <DropdownMenuTrigger>
-            <img
-              src="/logo.png"
-              className="w-6 h-6  hover:rotate-[110deg] transition  mt-1"
-            />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="ml-4 ">
-            <DropdownMenuLabel>Navigation</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Recent C</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+    <div className="flex border-b border-border justify-center items-center">
+      <nav className="flex items-center container justify-between  p-4 px-6 bg-background ">
+        <div className="text-2xl flex items-center gap-2  font-bold text-foreground">
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <img
+                src="/logo.png"
+                className="w-6 h-6  hover:rotate-[110deg] transition  mt-1"
+              />
+            </DropdownMenuTrigger>
+            {/* TODO ADD NAVIGATION TO LEADERBOARD PAGE */}
+            <DropdownMenuContent className="ml-4 ">
+              <DropdownMenuLabel>Navigation</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
-        <Link to="/" className="group   hover:underline underline-offset-4">
-          <span className="text-primary">S</span>O
-          <span className="text-primary ">N</span>O
-        </Link>
-      </div>
+          <Link to="/" className="group   hover:underline underline-offset-4">
+            <span className="text-primary">S</span>O
+            <span className="text-primary ">N</span>O
+          </Link>
+        </div>
 
-      <div>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              {/*  TODO: ADD LINK HERE. */}
-              <Avatar>
-                <AvatarFallback>br</AvatarFallback>
-                <AvatarImage src="" />
-              </Avatar>
-            </TooltipTrigger>
-            <TooltipContent className="mr-2">
-              <p>Your profile</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </div>
-    </nav>
+        <div className="flex items-center gap-2">
+          <Login />
+        </div>
+      </nav>
+    </div>
   );
 };
 

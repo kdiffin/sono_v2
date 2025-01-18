@@ -58,7 +58,7 @@ export function EventLeaderboard({ id }: { id: string }) {
               <li
                 key={participant.email}
                 className={cn(
-                  "flex p-4 rounded-2xl  items-center mb-2",
+                  "flex p-4 rounded-2xl flex-wrap  items-center mb-2",
                   i % 2 == 0 ? "bg-muted" : ""
                 )}
               >

@@ -34,7 +34,7 @@ const Navbar = () => {
             <DropdownMenuContent className="ml-4 ">
               <DropdownMenuLabel>Navigation</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Work in progress</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 

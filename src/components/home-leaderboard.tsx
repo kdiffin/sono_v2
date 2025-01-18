@@ -5,6 +5,7 @@ import { db } from "@/firebase"; // Adjust the import path as necessary
 import useAuth from "@/hooks/useAuth"; // Adjust the import path as necessary
 import { cn } from "@/lib/utils"; // Adjust the import path as necessary
 import { Sparkles } from "lucide-react";
+import { Link } from "react-router";
 
 interface User {
   aura: number;
@@ -43,7 +44,7 @@ export function HomeLeaderboard() {
             <li
               key={participant.email}
               className={cn(
-                "flex p-4 items-center rounded-2xl mb-2",
+                "flex p-4 items-center flex-wrap  rounded-2xl mb-2",
                 i % 2 === 0 ? "bg-muted" : ""
               )}
             >
@@ -52,7 +53,12 @@ export function HomeLeaderboard() {
                 alt={participant.displayName}
                 className="w-10 h-10 rounded-full mr-2"
               />
-              <span className="font-semibold">{participant.displayName}</span>
+              <Link to={"/profile/" + participant.id}>
+                <span className="font-semibold hover:underline underline-offset-4">
+                  {participant.displayName}
+                </span>
+              </Link>
+
               <span className="ml-auto rounded-md p-2 px-4 bg-primary text-white font-semibold flex items-center gap-2">
                 <Sparkles size={16} />
                 {participant.aura} Aura

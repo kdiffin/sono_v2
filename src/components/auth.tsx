@@ -66,8 +66,7 @@ const Auth: React.FC = () => {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                {/*  TODO: ADD LINK HERE. */}
-                <Link to="/profile/:id">
+                <Link to={"/profile/" + user.uid}>
                   <Avatar>
                     <AvatarFallback>
                       {user.displayName![0] ?? ""}

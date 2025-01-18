@@ -66,7 +66,7 @@ const EventPage = () => {
             <p className="text-muted-foreground max-w-xl ">
               {event.description}
             </p>
-            <div className="flex gap-1  mt-3 items-center">
+            <div className="flex gap-1 flex-wrap   mt-3 items-center">
               <DifficultyBadge difficulty={event.difficulty} />
               <Badge variant="default">
                 <Sparkles size={12} /> <Plus size={12} />
@@ -78,15 +78,15 @@ const EventPage = () => {
             </div>
           </div>
 
-          <div className="items-center flex  gap-2">
+          <div className="items-center flex flex-wrap   gap-2">
             <label
               className={
-                `${user === null ? "bg-muted " : " "} ` +
+                `${user === null ? "bg-muted  " : " "} ` +
                 "w-32 h-32 bg-primary   p-4 transition hover:bg-primary/80 text-white flex flex-col justify-center items-center rounded-md cursor-pointer"
               }
             >
               <input
-                disabled={user === null}
+                disabled={user === null || event.disabled}
                 type="file"
                 accept="image/*"
                 onChange={() => setShowClaim(true)}
@@ -100,7 +100,7 @@ const EventPage = () => {
 
             <button
               onClick={async () => await claimAura()}
-              disabled={!showClaim || auraLoading}
+              disabled={!showClaim || auraLoading || event.disabled}
               className="w-32 h-32 bg-secondary disabled:bg-muted  p-4  transition hover:bg-secondary/80  text-white flex flex-col justify-center items-center rounded-md"
             >
               <Sparkles

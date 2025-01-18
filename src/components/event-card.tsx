@@ -55,7 +55,7 @@ function EventCard({
           </div>
 
           <CardContent className="pt-6   pb-4">
-            <div className="flex gap-1 items-center">
+            <div className="flex gap-1 flex-wrap items-center">
               <DifficultyBadge difficulty={difficulty} />
               <Badge variant="default">
                 <Sparkles size={12} /> <Plus size={12} />
@@ -75,10 +75,12 @@ function EventCard({
           </CardContent>
         </div>
         <CardFooter className="pt-0  ">
-          <Button variant={"fancy"} size={"sm"}>
-            <Sparkles /> <BarChart />
-            Aura Leaderboard
-          </Button>
+          <Link to={"/event/" + id}>
+            <Button variant={"fancy"} size={"sm"}>
+              <Sparkles /> <BarChart />
+              Aura Leaderboard
+            </Button>
+          </Link>
         </CardFooter>
       </Card>
     );
@@ -96,7 +98,7 @@ function EventCard({
       </div>
 
       <CardContent className=" pt-6 pb-4">
-        <div className="flex gap-1  items-center">
+        <div className="flex gap-1 flex-wrap  items-center">
           <DifficultyBadge difficulty={difficulty} />
           <Badge variant="default">
             <Sparkles size={12} /> <Plus size={12} />

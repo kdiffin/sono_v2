@@ -6,6 +6,7 @@ import Home from "./routes/home";
 import EventPage from "./routes/event-page";
 import { Toaster } from "./components/ui/toaster";
 import Layout from "./routes/layout";
+import Profile from "./routes/profile";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -14,6 +15,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/event/:id" element={<EventPage />} />
+          <Route path="/profile/:id" element={<Profile />} />
         </Route>
       </Routes>
       <Toaster />

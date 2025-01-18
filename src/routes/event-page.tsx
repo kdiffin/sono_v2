@@ -1,13 +1,12 @@
-import EventCard, { DifficultyBadge } from "@/components/event-card";
+import { DifficultyBadge } from "@/components/event-card";
 import { EventLeaderboard } from "@/components/event-leaderboard";
 import ImageCustom from "@/components/image-custom";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { EVENTS } from "@/data";
 import { db } from "@/firebase";
 import useAuth from "@/hooks/useAuth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { Leaf, Plus, Sparkles, SparklesIcon, User2Icon } from "lucide-react";
+import { Plus, Sparkles, User2Icon } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { useToast } from "@/hooks/use-toast";

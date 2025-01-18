@@ -5,20 +5,9 @@ import {
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  BarChart,
-  DiffIcon,
-  Leaf,
-  Plus,
-  PlusCircle,
-  Sparkles,
-  SquareActivity,
-  User,
-  User2Icon,
-} from "lucide-react";
+import { BarChart, Leaf, Plus, Sparkles, User2Icon } from "lucide-react";
 import { Badge } from "./ui/badge";
 import ImageCustom from "./image-custom";
 import { Link } from "react-router";

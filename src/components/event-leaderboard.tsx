@@ -1,24 +1,14 @@
 // EventLeaderboard.tsx
-import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { EVENTS } from "@/data";
-import useAuth from "@/hooks/useAuth";
 import { db } from "@/firebase";
 import { cn } from "@/lib/utils";
 import { Sparkles } from "lucide-react";
 import { Link } from "react-router";
-
-interface User {
-  aura: number;
-  displayName: string;
-  email: string;
-  participatedEventsIDs: string[];
-  photoURL: string;
-}
+import { useEffect, useState } from "react";
 
 export function EventLeaderboard({ id }: { id: string }) {
   const [users, setUsers] = useState<any[]>([]);
-  const { user } = useAuth();
   const event = EVENTS.find((event) => event.id === id); // Find the event by ID
 
   useEffect(() => {

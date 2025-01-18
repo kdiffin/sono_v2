@@ -9,4 +9,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  logLevel: "error", // Options: 'info', 'warn', 'error', 'silent'
 });

@@ -1,23 +1,13 @@
 // HomeLeaderboard.tsx
-import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase"; // Adjust the import path as necessary
-import useAuth from "@/hooks/useAuth"; // Adjust the import path as necessary
 import { cn } from "@/lib/utils"; // Adjust the import path as necessary
 import { Sparkles } from "lucide-react";
 import { Link } from "react-router";
-
-interface User {
-  aura: number;
-  displayName: string;
-  email: string;
-  participatedEventsIDs: string[];
-  photoURL: string;
-}
+import { useEffect, useState } from "react";
 
 export function HomeLeaderboard() {
   const [users, setUsers] = useState<any[]>([]);
-  const { user } = useAuth();
 
   useEffect(() => {
     const fetchUsers = async () => {

@@ -1,5 +1,3 @@
-import React from "react";
-
 function Footer() {
   return (
     <div className="border-border border-t  p-4 flex items-center justify-center ">

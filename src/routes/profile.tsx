@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../firebase"; // Make sure to configure Firebase
 import { doc, getDoc } from "firebase/firestore"; // Import the correct methods
 import ImageCustom from "@/components/image-custom";
@@ -9,7 +9,6 @@ import EventCard, { EventCardContainer } from "@/components/event-card";
 
 function Profile() {
   const [userData, setUserData] = useState<any>(null); // Use 'any' or define a User type
-  const [eventData, setEventData] = useState<any>(null); // Use 'any' or define a User type
 
   const { id } = useParams(); // Get the event ID from the URL parameters
 

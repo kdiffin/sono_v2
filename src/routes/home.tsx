@@ -1,7 +1,6 @@
 import EventCard, { EventCardContainer } from "@/components/event-card";
 import { HomeLeaderboard } from "@/components/home-leaderboard";
 import { EVENTS } from "@/data";
-import React from "react";
 
 function Home() {
   return (

@@ -49,7 +49,7 @@ export function EventLeaderboard({ id }: { id: string }) {
   return (
     <div className="flex  flex-col flex-wrap border-2 border-primary  border-dashed rounded-sm p-8 justify-between gap-6">
       <h2 className="text-2xl font-semibold  mb-2">
-        Leaderboard for {event.title}
+        Leaderboard for {event.title} {"(" + sortedParticipants.length + ")"}
       </h2>
       <div className="">
         {sortedParticipants.length > 0 ? (
